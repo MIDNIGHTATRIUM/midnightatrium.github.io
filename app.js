@@ -1799,7 +1799,7 @@
      SECTION 2: Meteorology, KMLB AFD & Central Florida NEXRAD Module
      ========================================================================== */
 
-  const NWS_USER_AGENT = 'fool-in-love.github.io (Nippon Magnetics Div.04 Telemetry)';
+  const NWS_USER_AGENT = 'midnightatrium.github.io (Nippon Magnetics Div.04 Telemetry)';
   const NWS_OBS_HEADERS = {
     'User-Agent': NWS_USER_AGENT,
     Accept: 'application/geo+json',
@@ -2696,7 +2696,7 @@
      SECTION 3: Live GitHub Public Repositories Module
      ========================================================================== */
 
-  const GITHUB_REPOS_URL = 'https://api.github.com/users/fool-in-love/repos?sort=updated&per_page=6';
+  const GITHUB_REPOS_URL = 'https://api.github.com/users/MIDNIGHTATRIUM/repos?sort=updated&per_page=6';
   const GITHUB_HEADERS = {
     Accept: 'application/vnd.github+json',
   };
@@ -2927,14 +2927,14 @@
 
         setText(
           metaEl,
-          `USER: FOOL-IN-LOVE // ${repos.length} PUBLIC REPO${repos.length === 1 ? '' : 'S'}`
+          `USER: MIDNIGHTATRIUM // ${repos.length} PUBLIC REPO${repos.length === 1 ? '' : 'S'}`
         );
         renderRepositories(repos);
         reportStatus('status-github', `${repos.length} PUBLIC`, 'live');
       } catch (err) {
         if (err?.name === 'AbortError' || reqId !== requestCounter) return;
 
-        setText(metaEl, 'USER: FOOL-IN-LOVE // UNAVAILABLE');
+        setText(metaEl, 'USER: MIDNIGHTATRIUM // UNAVAILABLE');
         showError(err?.message || 'Unable to retrieve public repositories from api.github.com.');
         reportStatus('status-github', 'ERROR', 'error');
       }
